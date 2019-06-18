@@ -1,7 +1,8 @@
-flask
-flask_uploads
-flask_wtf
-torch 
-torchvision
-utils
-scipy
+Flask==1.0.3
+Flask-Uploads==0.2.1
+Flask-WTF==0.14.2
+torch==1.1.0
+torchvision==0.3.0
+utils==0.9.0
+scipy==1.3.0
+Pillow==6.0.0
