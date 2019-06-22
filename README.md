@@ -1,5 +1,5 @@
 # deepdream-seminar
-FZI Seminar at Karlsruhe Institute of Technology about Neural Style Transfer 
+FZI Seminar at Karlsruhe Institute of Technology about Neural Style Transfer.
 
 ## Clone repository 
 
