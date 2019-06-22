@@ -19,6 +19,8 @@ pip3 install -r requirements.txt
 ```
 On Windows with Python 3.7:
 
+Make sure, that you have the [x86-64](https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe) version installed, otherwise pytorch won't work.  
+
 ```bash
 cd deepdream-seminar
 py -3 -m venv venv
