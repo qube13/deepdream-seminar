@@ -8,11 +8,13 @@ from wtforms import SubmitField
 from neural_style import stylize
 from utils import base64_img
 
+PORT=5050
+work_dir = os.getcwd()
 
 # define app and config upload form
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'I have a dream'
-upload_dir = os.getcwd()+"/uploads/"
+upload_dir = work_dir+"/uploads/"
 app.config['UPLOADED_PHOTOS_DEST'] = upload_dir 
 
 photos = UploadSet('photos', IMAGES)
@@ -35,7 +37,7 @@ def upload_file():
 
         model_name = request.values.get("model")
         content_image = upload_dir + img_name
-        model = "/Users/Retter/deepdream/models/"+model_name+".model"
+        model = work_dir+"/models/"+model_name+".model"
         
         output_img = stylize(content_image, model, 0)
 
@@ -48,4 +50,4 @@ def upload_file():
             idxs = range(len(img_paths)),captions=captions)
 
 if __name__ == '__main__':
-    app.run(port=5050)
+    app.run(port=PORT)
