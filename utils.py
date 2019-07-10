@@ -23,6 +23,9 @@ def init_images():
             "theodor bohneberger": "4B4252604303B91657F115804F122B2C"
             }
 
+    if not os.path.exists('static/images'):
+        os.makedirs('static/images')
+
     for author,id_ in id_dict.items():
         directory = os.getcwd()+"/static/images"
 
