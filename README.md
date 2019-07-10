@@ -37,6 +37,22 @@ python3 app.py
 ```
 Go to http://localhost:5050 and create your own neural style transfer images. 
 
+## Troubleshooting
+
+On MacOS: 
+
+If at the start of the app.py script the import of torch doesn't work and an 
+
+```
+ImportError: dlopen(...): Library not loaded: /usr/local/opt/libomp/lib/libomp.dylib ... Reason: image not found
+``` 
+
+is thrown you have to install libomp with brew:
+
+```bash 
+brew install libomp
+```
+
 ## Add new neural style transfer models to the web-Application
 
 For the training of a new model you need one style picture and a dataset of random pictures (existing models were trained with the [COCO](http://cocodataset.org/#download) train dataset from 2014, 13 GB). Visit the [pytorch fast neural style example](https://github.com/pytorch/examples/tree/master/fast_neural_style) and follow the instructions to train a new style. 
