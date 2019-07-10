@@ -105,4 +105,4 @@ venv.bak/
 
 # vscode
 .vscode/
-static/images/
+static/images/*
