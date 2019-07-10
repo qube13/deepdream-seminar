@@ -6,7 +6,8 @@ from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 from wtforms import SubmitField
 from neural_style import stylize
-from utils import base64_img
+from utils import base64_img, init_images
+
 
 PORT=5050
 work_dir = os.getcwd()
@@ -50,4 +51,5 @@ def upload_file():
             idxs = range(len(img_paths)),captions=captions)
 
 if __name__ == '__main__':
+    init_images()
     app.run(port=PORT)

@@ -1,8 +1,40 @@
 import torch
+import requests
+import os 
 from PIL import Image, ExifTags
 import numpy as np
 from io import BytesIO
 import base64
+
+def init_images():
+
+    def save_pic(url,directory,author):
+        filename = directory + "/" + author + ".jpg"
+        r = requests.get(url, allow_redirects=True)
+        open(filename, 'wb').write(r.content)
+    
+    id_dict = {"otto dix": "2126E4604C97C06F4400C68B0929815B",
+            "utagawa hiroshige": "999105307A8D4F80BE192E93480B13DA",
+            "pablo picasso": "070DC1E34AE0BA7B20EF8BB50DC9FEF0",
+            "adolf hölzel": "02A8ED8D49FCED8E8D81FE824273D0D0",
+            "erich heckel": "00042A9614134A69A055F14A8B1BFA2B",
+            "ernst ludwig kirchner": "3C6B85FD4D5F2176F043384C7FAE604",
+            "wilhelm rudolph": "9485C7FF16974DBD9DE87C5BEAD96090",
+            "theodor bohneberger": "4B4252604303B91657F115804F122B2C"
+            }
+
+    for author,id_ in id_dict.items():
+        directory = os.getcwd()+"/static/images"
+
+        if os.path.isfile(directory+ "/{}.jpg".format(author)):
+            continue
+        
+        img_link = "https://swbexpo.bsz-bw.de/image/sgs?id={}&img=1".format(id_)
+        try:
+            save_pic(img_link,directory,author)
+        except Exception as e: 
+            print(e)
+            continue
 
 def base64_img(output_img):
     buffered = BytesIO()
