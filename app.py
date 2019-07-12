@@ -5,8 +5,8 @@ from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_cl
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 from wtforms import SubmitField
-from neural_style import stylize
-from utils import base64_img, init_images
+from helpers.neural_style import stylize
+from helpers.utils import base64_img, init_images
 
 
 PORT=5050
@@ -30,7 +30,9 @@ class UploadForm(FlaskForm):
 # define what happens 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
-    img_paths = os.listdir('static/images')
+    static_path = 'static/images'
+    included_extensions = ['jpg','jpeg','png']
+    img_paths = [fn for fn in os.listdir(static_path) if any(fn.endswith(ext) for ext in included_extensions)]
     captions = [os.path.splitext(path)[0] for path in img_paths]
     form = UploadForm()
     if form.validate_on_submit():
