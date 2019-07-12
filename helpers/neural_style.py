@@ -8,8 +8,8 @@ import torch.onnx
 from PIL import Image
 
 import utils
-from transformer_net import TransformerNet
-from vgg import Vgg16
+from helpers.transformer_net import TransformerNet
+from helpers.vgg import Vgg16
 
 def stylize(content_image, model, cuda):
     device = torch.device("cuda" if cuda else "cpu")
