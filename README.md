@@ -1,5 +1,18 @@
 # deepdream-seminar
-FZI Seminar at Karlsruhe Institute of Technology about Neural Style Transfer.
+FZI Seminar at Karlsruhe Institute of Technology about Neural Style Transfer. Implements a Web-Application that enables fast-neural-style transfer on the basis of style pictures from the Staatsgalerie Stuttgart. 
+
+## Web-Application 
+
+<p align="center">
+  <img src="pictures/web-app.png" width="50%">
+</p>
+
+
+## Style examples
+
+<p align="center">
+  <img src="pictures/overview.png" width="100%">
+</p>
 
 ## Clone repository 
 
