@@ -7,7 +7,7 @@ import torch.onnx
 
 from PIL import Image
 
-import utils
+import helpers.utils as utils
 from helpers.transformer_net import TransformerNet
 from helpers.vgg import Vgg16
 
