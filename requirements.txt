@@ -1,4 +1,4 @@
-Flask==1.0.3
+Flask==2.3.2
 Flask-Uploads==0.2.1
 Flask-WTF==0.14.2
 torch==1.1.0
